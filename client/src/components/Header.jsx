@@ -27,7 +27,7 @@ export default function Header() {
           <FaMoon />
         </Button>
         <Link to='/signin'>
-          <Button  pill>
+          <Button  outline pill>
             Sign In
           </Button>
         </Link>
