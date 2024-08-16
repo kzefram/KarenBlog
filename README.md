@@ -10,7 +10,7 @@ Site:
 
 **Client:** React, TailwindCSS
 
-**Server:** Node, Express, MongoDB Atlas
+**Server:** Node, Express, MongoDB Atlas, JWT, redux toolkit
 
 
 ## Authors
