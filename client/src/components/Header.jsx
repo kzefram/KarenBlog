@@ -19,7 +19,7 @@ export default function Header() {
           />
         </span>
         <span className='justify-center content-center text-white'>
-          Karen's Blog
+          Technology Blog
         </span>
       </Link>
       <form>
