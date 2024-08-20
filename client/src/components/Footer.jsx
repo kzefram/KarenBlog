@@ -6,6 +6,7 @@ import {
   BsTwitter,
   BsGithub,
   BsDribbble,
+  BsDiscord,
 } from "react-icons/bs";
 
 export default function FooterCom() {
@@ -36,7 +37,7 @@ export default function FooterCom() {
               <Footer.Title title='about' />
               <Footer.LinkGroup col>
                 <Footer.Link
-                  href='www.karenabourgeois.rocks'
+                  href='http://www.karenabourgeois.rocks'
                   target='_blank'
                   rel='noopener noreferrer'
                 >
@@ -103,6 +104,7 @@ export default function FooterCom() {
             <Footer.Icon href='#' icon={BsTwitter} />
             <Footer.Icon href='https://github.com/kzefram' icon={BsGithub} />
             <Footer.Icon href='#' icon={BsDribbble} />
+            <Footer.Icon href='#' icon={BsDiscord} />
           </div>
         </div>
       </div>
