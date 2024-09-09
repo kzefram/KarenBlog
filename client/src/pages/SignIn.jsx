@@ -2,15 +2,20 @@ import { Alert, Button, Label, Spinner, TextInput } from "flowbite-react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { siginInStart, signInSuccess, signInFailure } from "../redux/user/userSlice";
+import {
+  siginInStart,
+  signInSuccess,
+  signInFailure,
+} from "../redux/user/userSlice.js";
+import OAuth from "../components/OAuth.jsx";
 
 export default function SignIn() {
   const [formData, setFormData] = useState({});
-  const { loading, error: errorMessage } = useSelector(state => state.user);
+  const { loading, error: errorMessage } = useSelector((state) => state.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.id]: e.target.value.trim()  });
+    setFormData({ ...formData, [e.target.id]: e.target.value.trim() });
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -29,7 +34,7 @@ export default function SignIn() {
       if (data.success === false) {
         dispatch(signInFailure(data.message));
       }
-      
+
       if (res.ok) {
         dispatch(signInSuccess(data));
         navigate("/");
@@ -53,7 +58,7 @@ export default function SignIn() {
               />
             </span>
             <span className='justify-center content-center text-gray-500'>
-              Technology Blog
+              Karen Blog
             </span>
           </Link>
           <p className='text-sm mt-5 text-gray-500'>
@@ -97,6 +102,7 @@ export default function SignIn() {
                 "Sign In"
               )}
             </Button>
+            <OAuth />
             <div className='flex gap-2 text-sm mt-5'>
               <span>Dont have an account?</span>
               <Link to='/signup' className='text-blue-500'>
