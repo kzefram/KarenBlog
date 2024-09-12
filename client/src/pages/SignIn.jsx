@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  siginInStart,
+  signInStart,
   signInSuccess,
   signInFailure,
 } from "../redux/user/userSlice.js";
@@ -23,7 +23,7 @@ export default function SignIn() {
       return dispatch(signInFailure("Please fill out all fields."));
     }
     try {
-      dispatch(siginInStart());
+      dispatch(signInStart());
       const res = await fetch("/api/auth/signin", {
         method: "POST",
         headers: { "Content-Type": "application/json" },

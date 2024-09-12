@@ -1,13 +1,6 @@
 import { Footer } from "flowbite-react";
 import { Link } from "react-router-dom";
-import {
-  BsFacebook,
-  BsInstagram,
-  BsTwitter,
-  BsGithub,
-  BsDribbble,
-  BsDiscord,
-} from "react-icons/bs";
+import { BsGithub, BsDiscord, BsLinkedin } from "react-icons/bs";
 
 export default function FooterCom() {
   return (
@@ -37,17 +30,13 @@ export default function FooterCom() {
               <Footer.Title title='about' />
               <Footer.LinkGroup col>
                 <Footer.Link
-                  href='http://www.karenabourgeois.rocks'
+                  href='http://www.karenbourgeois.rocks'
                   target='_blank'
                   rel='noopener noreferrer'
                 >
                   Portfolio
                 </Footer.Link>
-                <Footer.Link
-                  href='/about'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                >
+                <Footer.Link href='/about' rel='noopener noreferrer'>
                   About Karen
                 </Footer.Link>
               </Footer.LinkGroup>
@@ -63,14 +52,14 @@ export default function FooterCom() {
                   GitHub
                 </Footer.Link>
                 <Footer.Link
-                  href='www.linkedin.com/in/karen0bourgeois'
+                  href='https://www.linkedin.com/in/karen0bourgeois'
                   target='_blank'
                   rel='noopener noreferrer'
                 >
                   LinkedIn
                 </Footer.Link>
                 <Footer.Link
-                  href='https://discord.com/karenangela'
+                  href='https://discordapp.com/users/karenangela/'
                   target='_blank'
                   rel='noopener noreferrer'
                 >
@@ -94,17 +83,20 @@ export default function FooterCom() {
         <Footer.Divider />
         <div className='w-full sm:flex sm:items-center sm:justify-between'>
           <Footer.Copyright
-            href='www.karenabourgeois.rocks'
+            href='http://www.karenbourgeois.rocks'
             by='Karen Bourgeois'
             year={new Date().getFullYear()}
           />
           <div className='flex gap-6 sm:mt-0 mt-4 sm:justify-center'>
-            <Footer.Icon href='#' icon={BsFacebook} />
-            <Footer.Icon href='#' icon={BsInstagram} />
-            <Footer.Icon href='#' icon={BsTwitter} />
             <Footer.Icon href='https://github.com/kzefram' icon={BsGithub} />
-            <Footer.Icon href='#' icon={BsDribbble} />
-            <Footer.Icon href='#' icon={BsDiscord} />
+            <Footer.Icon
+              href='https://www.linkedin.com/in/karen0bourgeois'
+              icon={BsLinkedin}
+            />
+            <Footer.Icon
+              href='https://discordapp.com/users/karenangela/'
+              icon={BsDiscord}
+            />
           </div>
         </div>
       </div>
