@@ -40,7 +40,7 @@ export default function OAuth() {
       outline
       onClick={handleGoogleClick}
     >
-      OAuth
+      
       <AiFillGoogleCircle className='w06 h-6 mr-2' />
       Continue with Google
     </Button>
