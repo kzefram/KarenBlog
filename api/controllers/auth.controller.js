@@ -1,7 +1,7 @@
 import User from "../models/user.model.js";
 import bcryptjs from "bcryptjs/dist/bcrypt.js";
 import { errorHandler } from "../utils/error.js";
-import JWT from "jsonwebtoken";
+import jwt from "jsonwebtoken";
 
 export const signup = async (req, res, next) => {
   const { username, email, password } = req.body;
@@ -51,7 +51,7 @@ export const signin = async (req, res, next) => {
       return next(errorHandler(400, "Email or Password not found"));
     }
 
-    const token = JWT.sign({ userId: user._id }, process.env.JWT_SECRET, {
+    const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
       expiresIn: "1h",
     });
 
@@ -72,7 +72,7 @@ export const google = async (req, res, next) => {
   try {
     const user = await User.findOne({ email});
     if (user) {
-      const token = JWT.sign({id: user._id}, process.env.JWT_SECRET);
+      const token = jwt.sign({id: user._id}, process.env.JWT_SECRET);
       const {password, ...rest} = user._doc;
       res.status(200).cookie("access_token", token, {
         httpOnly: true
@@ -88,11 +88,11 @@ export const google = async (req, res, next) => {
           Math.random().toString(9).slice(-4),
         email,
         password: hashedPassword,
-        photo: googlePhotoUrl,
+        profilePicture: googlePhotoUrl,
       });
       await newUser.save();
       const token = jwt.sign(
-        { id: newUser._id, isAdmin: newUser.isAdmin },
+        { id: newUser._id },
         process.env.JWT_SECRET
       );
       const { password, ...rest } = newUser._doc;
